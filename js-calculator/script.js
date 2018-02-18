@@ -1,33 +1,26 @@
 
 var input = firstNumber = operator = "";
-var calcButtons = document.getElementsByClassName("calc-button");
+document.getElementById('calculator').addEventListener('click', handleClick);
 
-
-for (var button of calcButtons){
-	var i = button.innerHTML;
-	if (i == 1 || i == 2 || i == 3 || i == 4
-		|| i == 5 || i == 6 || i == 7 || i ==8 
-		|| i ==9 || i ==0){
-		button.addEventListener("click", function(){
-			updateDisplay(this.innerHTML);
-		})
+function handleClick(event){
+	const id = event.target.id;
+	if (id == 1 || id == 2 || id == 3 || id == 4 || 
+		id == 5 || id == 6 || id == 7 || id ==8 || 
+		id ==9 || id == 0){
+		updateDisplay(event.target.innerHTML);
 	}
-	if (i === "AC"){
-		button.addEventListener("click", function(){
-			clearDisplay();
-		})
+	if (id === "AC"){
+		clearDisplay();
 	}
-	if (i === "+" || i == "-" || i == "*" || i == "/"){
-		button.addEventListener("click", function(){
-			applyOperator(this.innerHTML);
-		})
+	if (id === "+" || id === "-" || id === "*" || id === "/"){
+		applyOperator(event.target.innerHTML);
 	}
-	if (i === "="){
-		button.addEventListener("click", function(){
-			calculate();
-		})
+	if (id === "="){
+		calculate();
 	}
 }
+
+
 
 function updateDisplay(buttonInput){
 	input += buttonInput;
