@@ -5,8 +5,8 @@ document.getElementById('calculator').addEventListener('click', handleClick);
 function handleClick(event){
 	const id = event.target.id;
 	if (id == 1 || id == 2 || id == 3 || id == 4 || 
-		id == 5 || id == 6 || id == 7 || id ==8 || 
-		id ==9 || id == 0){
+		id == 5 || id == 6 || id == 7 || id == 8 || 
+		id == 9 || id == 0){
 		updateDisplay(event.target.innerHTML);
 	}
 	if (id === "AC"){
@@ -19,8 +19,6 @@ function handleClick(event){
 		calculate();
 	}
 }
-
-
 
 function updateDisplay(buttonInput){
 	input += buttonInput;
