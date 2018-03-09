@@ -5,23 +5,21 @@ function showTime(){
 	var date = new Date();
 
 	//get hours and format it properly.
-	if (date.getHours() > 12){
+	if (date.getHours() > 12)
 		var hours = date.getHours()%12;
-	}
-	if (hours < 10){
+	if (hours < 10)
 		hours = '0' + hours.toString();
-	}
-	else {
+	else 
 		hours = hours.toString();
-	}
+	
 
 	// Get minutes and format properly.
-	if (date.getMinutes() < 10){
+	if (date.getMinutes() < 10)
 		var minutes = '0' + date.getMinutes().toString();
-	}
-	else {
+	
+	else 
 		var minutes = date.getMinutes().toString();
-	}
+	
 
 	//get Seconds and format properly.
 	if (date.getSeconds() < 10)
