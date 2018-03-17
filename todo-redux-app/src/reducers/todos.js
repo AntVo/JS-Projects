@@ -12,20 +12,19 @@ const initialState = [
 // Todos reducers
 export default function todos(state = initialState, action){
 	switch(action.type) {
+
 		case ADD_TODO:
 			return [
 				...state,
 				{
-					id: action.id,
+					id: state.length-1;
 					text: action.text,
 					completed: false
 				}
 			]
 
 		case DELETE_TODO:
-			return [
-				
-			]
+			return state.filter(todo => todo.id !== action.id);
 
 		default:
 			return state;
