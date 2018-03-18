@@ -17,7 +17,7 @@ export default function todos(state = initialState, action){
 			return [
 				...state,
 				{
-					id: state.length-1,
+					id: state.length,
 					text: action.text,
 					completed: false
 				}
@@ -25,7 +25,7 @@ export default function todos(state = initialState, action){
 
 		case 'DELETE_TODO':
 			return state.filter(todo => todo.id !== action.id);
-
+			
 		default:
 			return state;
 	}
