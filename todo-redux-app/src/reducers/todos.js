@@ -4,7 +4,7 @@
 const initialState = [
 	{
 		text: 'Learn Redux',
-		complated: false,
+		completed: false,
 		id: 0
 	}
 ]
@@ -13,24 +13,22 @@ const initialState = [
 export default function todos(state = initialState, action){
 	switch(action.type) {
 
-		case ADD_TODO:
+		case 'ADD_TODO':
 			return [
 				...state,
 				{
-					id: state.length-1;
+					id: state.length-1,
 					text: action.text,
 					completed: false
 				}
 			]
 
-		case DELETE_TODO:
+		case 'DELETE_TODO':
 			return state.filter(todo => todo.id !== action.id);
 
 		default:
 			return state;
 	}
-
-
 
 
 }
